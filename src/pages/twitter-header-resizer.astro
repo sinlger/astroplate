@@ -1,0 +1,221 @@
+---
+import Base from "@/layouts/Base.astro";
+import Breadcrumbs from "@/layouts/components/Breadcrumbs.astro";
+import ImageEditor from "@/layouts/components/ImageEditor";
+import { PRESETS } from "@/lib/imageProcessor";
+
+const title = "Twitter (X) Header Resizer - Resize Banner to 1500x500";
+const description = "Resize and crop images for Twitter/X header banners (1500x500). Includes live preview of avatar overlay to prevent text from being blocked. Free online X banner resizer.";
+---
+
+<Base title={title} description={description}>
+  <div class="container pt-6">
+    <div class="row justify-center">
+      <div class="lg:col-10 md:col-12">
+        <Breadcrumbs />
+      </div>
+    </div>
+  </div>
+
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10 md:col-12">
+          <div class="text-center mb-8">
+            <h1 class="text-h2 lg:text-h1 mb-4">
+              Twitter (X) Header Resizer
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Resize your banner to the <strong>exact 1500×500 Twitter header size</strong>. Includes unique avatar overlay preview to avoid text getting blocked by your profile picture.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 mb-8">
+            <ImageEditor client:load preset={PRESETS.twitter.header} allowPadding={true} defaultPadding="blur" showAvatarOverlay={true} />
+          </div>
+
+          <!-- Step-by-Step Instructions for Beginners -->
+          <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 mb-12">
+            <h2 class="text-h4 mb-4">How to Resize Your Twitter (X) Header Banner (Step by Step)</h2>
+            <ol class="list-decimal pl-6 space-y-3 text-gray-700 dark:text-gray-300">
+              <li class="pl-2">
+                <strong>Upload your header image</strong> by clicking the upload area. Our tool automatically sets the correct size (1500×500 pixels, 3:1 ratio which is the current Twitter recommended size).
+              </li>
+              <li class="pl-2">
+                <strong>Drag to position your image</strong> so the important content is in the right place.
+              </li>
+              <li class="pl-2">
+                <strong>Check the avatar overlay</strong>: You'll see a dashed circle in the bottom-left corner. This shows <em>where your profile picture will appear</em>. Make sure important text or faces aren't inside this circle.
+              </li>
+              <li class="pl-2">
+                If your image doesn't fit exactly, use <strong>Smart Padding</strong> to fill the extra space with a blurred background or solid color.
+              </li>
+              <li class="pl-2">
+                Choose your export format and click <strong>"Download Image"</strong>.
+              </li>
+              <li class="pl-2">
+                Upload your new header to Twitter/X and you're done!
+              </li>
+            </ol>
+
+            <div class="mt-4 p-4 bg-yellow-50 dark:bg-yellow-900/30 rounded border-l-4 border-yellow-400">
+              <p class="text-sm"><strong>✨ Unique Feature:</strong> Our avatar overlay preview shows you exactly where Twitter will place your profile picture on the header, so you can avoid having your important text blocked.</p>
+            </div>
+          </div>
+
+          <!-- Product Introduction -->
+          <div class="mb-12">
+            <h2 class="text-h3 mb-6">About Our Twitter (X) Header Resizer</h2>
+            <div class="bg-white dark:bg-gray-900 rounded-lg p-6 shadow-sm">
+              <h3 class="text-h4 mb-4">What is this tool?</h3>
+              <p class="text-gray-700 dark:text-gray-300 mb-4">
+                Our <strong>free Twitter header resizer</strong> helps you quickly resize any image to the exact <strong>1500×500 pixel size</strong> that Twitter/X recommends for profile banners. The unique avatar overlay preview shows you exactly where your profile picture will cover the header, so you never accidentally have important text blocked.
+              </p>
+
+              <h3 class="text-h4 mb-4 mt-6">Common Use Cases</h3>
+              <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+                <li>Creating a new header for your Twitter/X profile</li>
+                <li>Resizing an existing image to fit the current Twitter dimensions</li>
+                <li>Redesigning your profile branding</li>
+                <li>Preparing banners for business or personal accounts</li>
+                <li>Testing different header designs before publishing</li>
+              </ul>
+
+              <h3 class="text-h4 mb-4 mt-6">Usage Limits</h3>
+              <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+                <li>Maximum input file size: 10MB per image</li>
+                <li>Unlimited usage - resize as many headers as you want for free</li>
+                <li>All processing happens locally in your browser - we never store your images</li>
+                <li>No watermarks added to your output image</li>
+                <li>Final output image must be under 5MB to meet Twitter's requirements</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Content -->
+  <section class="section bg-gray-50 dark:bg-gray-950">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-8 md:col-10">
+          <h2 class="text-h3 mb-6">Twitter (X) Header Size Guide (2024)</h2>
+
+          <div class="space-y-4 text-gray-700 dark:text-gray-300">
+            <p>
+              As of 2024, the recommended size for a <strong>Twitter/X header banner</strong> is <strong>1500 × 500 pixels</strong> with a <strong>3:1 aspect ratio</strong>. This ensures your header banner looks correct on both desktop and mobile devices.
+            </p>
+
+            <div class="bg-yellow-50 dark:bg-yellow-900/30 border-l-4 border-yellow-400 p-4 my-6">
+              <p class="font-semibold">Important Tip:</p>
+              <p class="text-sm">Twitter places your profile avatar over the <strong>bottom-left corner</strong> of the header. Always check that important text or faces aren't covered by using our avatar overlay preview before you download.</p>
+            </div>
+
+            <h3 class="text-h4 mt-8 mb-4">Quick Facts about Twitter Header Dimensions</h3>
+            <ul class="list-disc pl-6 space-y-2">
+              <li><strong>Recommended dimensions:</strong> 1500 × 500 pixels</li>
+              <li><strong>Aspect ratio:</strong> 3:1</li>
+              <li><strong>Maximum file size:</strong> 5MB</li>
+              <li><strong>Accepted formats:</strong> JPG, PNG, WebP</li>
+            </ul>
+
+            <h3 class="text-h4 mt-8 mb-4">Frequently Asked Questions</h3>
+
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-semibold mb-2">What is the correct size for a Twitter header in 2024?</h4>
+                <p>The official recommended size for a Twitter (X) header is 1500 × 500 pixels with a 3:1 aspect ratio. Using the correct size ensures your banner displays properly on all devices.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Why does the avatar overlay preview matter?</h4>
+                <p>Twitter places your profile picture over the bottom-left corner of the header. If you place important text there, it will be partially completely blocked by your avatar. Our tool shows you exactly where the avatar will be so you can avoid this common design mistake.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Can I use a blurred background if my image doesn't fit?</h4>
+                <p>Yes! Our smart padding feature automatically fills any extra space with a blurred version of your image for a professional, modern look. You can also choose a solid color background if you prefer.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Is this X header resizer really free?</h4>
+                <p>Yes! This tool is 100% free to use. All processing happens directly in your browser, so we never store your images. No watermarks, no sign-up required.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Tools -->
+          <div class="mt-12">
+            <h3 class="text-h4 mb-4">Try Our Other Free Social Media Tools</h3>
+            <div class="grid grid-cols-2 gap-3">
+              <a href="/youtube-thumbnail-resizer" class="p-3 border border-gray-200 dark:border-gray-800 rounded hover:border-primary dark:hover:border-darkmode-primary transition-colors">
+                <span class="font-medium">YouTube Thumbnail Resizer</span>
+              </a>
+              <a href="/resize-image-without-cropping" class="p-3 border border-gray-200 dark:border-gray-800 rounded hover:border-primary dark:hover:border-darkmode-primary transition-colors">
+                <span class="font-medium">Resize Without Cropping</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Twitter (X) Header Resizer",
+    "description": "Resize and crop images for Twitter/X header banners (1500x500). Includes live preview of avatar overlay to prevent text from being blocked. Free online X banner resizer.",
+    "url": "https://socialcrop.app/twitter-header-resizer",
+    "applicationCategory": "PhotoEditor",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the correct size for a Twitter header in 2024?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The official recommended size for a Twitter (X) header is 1500 × 500 pixels with a 3:1 aspect ratio. Using the correct size ensures your banner displays properly on all devices."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does the avatar preview matter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Twitter places your profile picture over the bottom-left corner of the header. If you place important text there, it will be partially completely blocked by your avatar. Our tool shows you exactly where the avatar will be so you can avoid this common design mistake."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the maximum file size for a Twitter header?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The maximum file size for a Twitter header is 5MB. We recommend exporting as JPG or WebP to keep file size down while maintaining good quality."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What file formats does Twitter accept for headers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Twitter accepts JPG, PNG, and WebP formats for header banners."
+        }
+      }
+    ]
+  }
+  </script>
+</Base>

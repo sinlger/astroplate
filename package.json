@@ -33,6 +33,7 @@
     "disqus-react": "^1.1.7",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
+    "jszip": "^3.10.1",
     "marked": "^18.0.5",
     "prop-types": "^15.8.1",
     "react": "^19.2.7",
@@ -66,5 +67,8 @@
   "overrides": {
     "typescript": "$typescript",
     "astro": "$astro"
-  }
+  },
+  "workspaces": [
+    "."
+  ]
 }

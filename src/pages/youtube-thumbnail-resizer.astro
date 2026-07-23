@@ -1,0 +1,222 @@
+---
+import Base from "@/layouts/Base.astro";
+import Breadcrumbs from "@/layouts/components/Breadcrumbs.astro";
+import ImageEditor from "@/layouts/components/ImageEditor";
+import { PRESETS } from "@/lib/imageProcessor";
+
+const title = "Free YouTube Thumbnail Resizer - Resize to 1280x720 (No Quality Loss)";
+const description = "Resize any image to the exact YouTube thumbnail size (1280x720 / 16:9) instantly. Free, no watermark, and preserves 100% original quality. Smart padding avoids cropping key content.";
+---
+
+<Base title={title} description={description}>
+  <div class="container pt-6">
+    <div class="row justify-center">
+      <div class="lg:col-10 md:col-12">
+        <Breadcrumbs />
+      </div>
+    </div>
+  </div>
+
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10 md:col-12">
+          <div class="text-center mb-8">
+            <h1 class="text-h2 lg:text-h1 mb-4">
+              YouTube Thumbnail Resizer
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Resize any image to the <strong>exact YouTube thumbnail size (1280×720, 16:9)</strong> in one click. Free, no watermark, and your image never leaves your browser. Smart padding keeps key content from being cropped.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 mb-8">
+            <ImageEditor client:load preset={PRESETS.youtube.thumbnail} allowPadding={true} defaultPadding="blur" />
+          </div>
+
+          <!-- Step-by-Step Instructions for Beginners -->
+          <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 mb-12">
+            <h2 class="text-h4 mb-4">How to Resize an Image for a YouTube Thumbnail (Step by Step)</h2>
+            <ol class="list-decimal pl-6 space-y-3 text-gray-700 dark:text-gray-300">
+              <li class="pl-2">
+                <strong>Upload your image</strong> by clicking the upload area or dragging and dropping your file. The tool is already locked to the correct YouTube thumbnail size (1280×720 pixels, 16:9 ratio).
+              </li>
+              <li class="pl-2">
+                <strong>Check the quality indicator</strong>: if your image is smaller than 1280×720, you'll see a "Low Resolution Warning". For the best result, upload an image that is at least 1280×720.
+              </li>
+              <li class="pl-2">
+                <strong>Drag to position your image</strong> so the most important content stays in frame.
+              </li>
+              <li class="pl-2">
+                If your image isn't 16:9, use <strong>Smart Padding</strong> to fill the extra space with a blurred background or a solid color instead of cropping out key details.
+              </li>
+              <li class="pl-2">
+                Choose your export format and click <strong>"Download Image"</strong>. Keep the file under 2MB to meet YouTube's limit.
+              </li>
+              <li class="pl-2">
+                Upload your new thumbnail to YouTube Studio and you're done!
+              </li>
+            </ol>
+
+            <div class="mt-4 p-4 bg-yellow-50 dark:bg-yellow-900/30 rounded border-l-4 border-yellow-400">
+              <p class="text-sm"><strong>💡 Tip:</strong> YouTube thumbnails look best with bold, high-contrast visuals and large text. Keep the most important subject in the center so it survives cropping on different devices.</p>
+            </div>
+          </div>
+
+          <!-- Product Introduction -->
+          <div class="mb-12">
+            <h2 class="text-h3 mb-6">About Our YouTube Thumbnail Resizer</h2>
+            <div class="bg-white dark:bg-gray-900 rounded-lg p-6 shadow-sm">
+              <h3 class="text-h4 mb-4">What is this tool?</h3>
+              <p class="text-gray-700 dark:text-gray-300 mb-4">
+                Our <strong>free YouTube thumbnail resizer</strong> helps you resize any image to the exact <strong>1280×720 pixel size</strong> (16:9 aspect ratio) that YouTube requires for video thumbnails. Everything happens right in your browser, so your images are never uploaded to a server.
+              </p>
+
+              <h3 class="text-h4 mb-4 mt-6">Common Use Cases</h3>
+              <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+                <li>Creating custom thumbnails for your YouTube videos</li>
+                <li>Resizing photos or graphics to the official 1280×720 thumbnail size</li>
+                <li>Fitting vertical or square images into a 16:9 thumbnail without cropping</li>
+                <li>Preparing thumbnail drafts before publishing a video</li>
+                <li>Batch-prepping thumbnails for a whole channel rebrand</li>
+              </ul>
+
+              <h3 class="text-h4 mb-4 mt-6">Usage Limits</h3>
+              <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+                <li>Maximum input file size: 10MB per image</li>
+                <li>Final thumbnail must be under 2MB to meet YouTube's requirement</li>
+                <li>Unlimited usage - resize as many thumbnails as you want for free</li>
+                <li>All processing happens locally in your browser - we never store your images</li>
+                <li>No watermarks added to your output image</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Content -->
+  <section class="section bg-gray-50 dark:bg-gray-950">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-8 md:col-10">
+          <h2 class="text-h3 mb-6">YouTube Thumbnail Size Guide (1280×720, 16:9)</h2>
+
+          <div class="space-y-4 text-gray-700 dark:text-gray-300">
+            <p>
+              The official recommended size for a <strong>YouTube thumbnail</strong> is <strong>1280 × 720 pixels</strong> with a <strong>16:9 aspect ratio</strong>. This matches YouTube's video player and ensures your thumbnail looks sharp on desktop, mobile, and TV screens.
+            </p>
+
+            <div class="bg-yellow-50 dark:bg-yellow-900/30 border-l-4 border-yellow-400 p-4 my-6">
+              <p class="font-semibold">Important Tip:</p>
+              <p class="text-sm">YouTube thumbnails must be <strong>under 2MB</strong> and in JPG, PNG, or GIF format. For the best quality with a small file size, export as JPG or WebP.</p>
+            </div>
+
+            <h3 class="text-h4 mt-8 mb-4">Quick Facts about YouTube Thumbnail Dimensions</h3>
+            <ul class="list-disc pl-6 space-y-2">
+              <li><strong>Recommended dimensions:</strong> 1280 × 720 pixels</li>
+              <li><strong>Aspect ratio:</strong> 16:9</li>
+              <li><strong>Maximum file size:</strong> 2MB</li>
+              <li><strong>Accepted formats:</strong> JPG, PNG, GIF</li>
+              <li><strong>Minimum width:</strong> 640 pixels</li>
+            </ul>
+
+            <h3 class="text-h4 mt-8 mb-4">Frequently Asked Questions</h3>
+
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-semibold mb-2">What is the correct size for a YouTube thumbnail?</h4>
+                <p>The official recommended size for a YouTube thumbnail is 1280 × 720 pixels with a 16:9 aspect ratio. Using the correct size ensures your thumbnail displays sharply on all devices.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">What happens if my image isn't 16:9?</h4>
+                <p>Our smart padding feature fills any extra space with a blurred version of your image or a solid color, so your entire picture fits the 1280×720 thumbnail without key content being cropped out.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">What is the maximum file size for a YouTube thumbnail?</h4>
+                <p>YouTube limits thumbnails to 2MB. We recommend exporting as JPG or WebP to keep the file size small while maintaining good quality.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Is this YouTube thumbnail resizer really free?</h4>
+                <p>Yes! This tool is 100% free to use. All processing happens directly in your browser, so we never store your images. No watermarks, no sign-up required.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Tools -->
+          <div class="mt-12">
+            <h3 class="text-h4 mb-4">Try Our Other Free Social Media Tools</h3>
+            <div class="grid grid-cols-2 gap-3">
+              <a href="/resize-image-without-cropping" class="p-3 border border-gray-200 dark:border-gray-800 rounded hover:border-primary dark:hover:border-darkmode-primary transition-colors">
+                <span class="font-medium">Resize Without Cropping</span>
+              </a>
+              <a href="/instagram-photo-cropper" class="p-3 border border-gray-200 dark:border-gray-800 rounded hover:border-primary dark:hover:border-darkmode-primary transition-colors">
+                <span class="font-medium">Instagram Photo Cropper</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "YouTube Thumbnail Resizer",
+    "description": "Resize any image to the exact YouTube thumbnail size (1280x720 / 16:9) instantly. Free, no watermark, and preserves 100% original quality.",
+    "url": "https://socialcrop.app/youtube-thumbnail-resizer",
+    "applicationCategory": "PhotoEditor",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the correct size for a YouTube thumbnail?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The official recommended size for a YouTube thumbnail is 1280 × 720 pixels with a 16:9 aspect ratio. Using the correct size ensures your thumbnail displays sharply on all devices."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the maximum file size for a YouTube thumbnail?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "YouTube limits thumbnails to 2MB. We recommend exporting as JPG or WebP to keep the file size small while maintaining good quality."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if my image isn't 16:9?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our smart padding feature fills any extra space with a blurred version of your image or a solid color, so your entire picture fits the 1280x720 thumbnail without key content being cropped out."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this YouTube thumbnail resizer really free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! This tool is 100% free to use. All processing happens directly in your browser, so we never store your images. No watermarks, no sign-up required."
+        }
+      }
+    ]
+  }
+  </script>
+</Base>

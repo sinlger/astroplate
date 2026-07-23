@@ -1,0 +1,332 @@
+﻿---
+import Base from "@/layouts/Base.astro";
+import Breadcrumbs from "@/layouts/components/Breadcrumbs.astro";
+import ImageEditor from "@/layouts/components/ImageEditor";
+import { PRESETS } from "@/lib/imageProcessor";
+
+const title = "Resize Image Without Cropping - Fit Any Aspect Ratio Online";
+const description = "Fit your full picture into any social media aspect ratio without cropping out key details. Add blurred, white, or custom color borders easily. Free online no-crop resizer.";
+---
+
+<Base title={title} description={description}>
+  <div class="container pt-6">
+    <div class="row justify-center">
+      <div class="lg:col-10 md:col-12">
+        <Breadcrumbs />
+      </div>
+    </div>
+  </div>
+
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10 md:col-12">
+          <div class="text-center mb-8">
+            <h1 class="text-h2 lg:text-h1 mb-4">
+              Resize Image Without Cropping
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Fit your <strong>entire image into any aspect ratio</strong> without cutting out key details. Add blurred, solid, or white borders easily. 100% free online tool.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 mb-8">
+            <div class="mb-6">
+              <h3 class="text-lg font-medium mb-3 text-center">Target Aspect Ratio</h3>
+              <div id="preset-buttons" class="flex flex-wrap justify-center gap-3">
+                <button data-preset="1:1" class="px-4 py-2 rounded-md border transition-colors bg-primary text-white border-primary dark:bg-darkmode-primary dark:text-text-dark dark:border-darkmode-primary">
+                  1:1 (Square)
+                </button>
+                <button data-preset="4:5" class="px-4 py-2 rounded-md border transition-colors bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-primary dark:hover:border-darkmode-primary">
+                  4:5 (Portrait)
+                </button>
+                <button data-preset="16:9" class="px-4 py-2 rounded-md border transition-colors bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-primary dark:hover:border-darkmode-primary">
+                  16:9 (Landscape)
+                </button>
+                <button data-preset="9:16" class="px-4 py-2 rounded-md border transition-colors bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-primary dark:hover:border-darkmode-primary">
+                  9:16 (Vertical)
+                </button>
+              </div>
+              <p class="text-sm text-center text-gray-500 mt-2">Click a preset above, then upload your image</p>
+            </div>
+
+            <div id="editor">
+              <ImageEditor client:load preset={PRESETS.common["1:1"]} allowPadding={true} defaultPadding="blur" />
+            </div>
+          </div>
+
+          <!-- Step-by-Step Instructions for Beginners -->
+          <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 mb-12">
+            <h2 class="text-h4 mb-4">How to Resize an Image Without Cropping (Step by Step)</h2>
+            <ol class="list-decimal pl-6 space-y-3 text-gray-700 dark:text-gray-300">
+              <li class="pl-2">
+                <strong>Select your target aspect ratio</strong> from the options above. Choose the ratio you need for your social media platform (1:1 for Instagram square, 4:5 for Instagram portrait, etc.)
+              </li>
+              <li class="pl-2">
+                <strong>Upload your image</strong> - click the upload area or drag and drop your file.
+              </li>
+              <li class="pl-2">
+                <strong>Choose your background padding style</strong>:
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                  <li><em>Blur Background</em> - Uses a blurred version of your image as padding (modern and most popular)</li>
+                  <li><em>Solid Color</em> - Use any solid color you pick with the color picker</li>
+                </ul>
+              </li>
+              <li class="pl-2">
+                <strong>Select your export format</strong> (PNG, JPG, or WebP).
+              </li>
+              <li class="pl-2">
+                <strong>Click "Download Image"</strong> and your resized image will download automatically.
+              </li>
+              <li class="pl-2">
+                That's it! Your entire image fits perfectly in the target size without any cropping.
+              </li>
+            </ol>
+          </div>
+
+          <!-- Product Introduction -->
+          <div class="mb-12">
+            <h2 class="text-h3 mb-6">About Our No-Crop Image Resizer</h2>
+            <div class="bg-white dark:bg-gray-900 rounded-lg p-6 shadow-sm">
+              <h3 class="text-h4 mb-4">What is this tool?</h3>
+              <p class="text-gray-700 dark:text-gray-300 mb-4">
+                Our <strong>Resize Image Without Cropping</strong> tool lets you fit any image into any aspect ratio <em>without cutting out any part of your picture</em>. Instead of cropping, it automatically expands the canvas and adds padding around your image. This is perfect when you need to adapt an image for social media but don't want to lose any important content.
+              </p>
+
+              <h3 class="text-h4 mb-4 mt-6">Common Use Cases</h3>
+              <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+                <li>Adapting photos for Instagram when you don't want to crop</li>
+                <li>Fitting vertical images into horizontal frames</li>
+                <li>Creating thumbnails for YouTube without cutting out key content</li>
+                <li>Preparing images for website banners with exact dimensions</li>
+                <li>Making photos fit into social media templates without cropping</li>
+              </ul>
+
+              <h3 class="text-h4 mb-4 mt-6">Usage Limits</h3>
+              <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+                <li>Maximum input file size: 10MB per image</li>
+                <li>Unlimited usage - use as many times as you want for free</li>
+                <li>All processing happens locally in your browser - we never store your images</li>
+                <li>No watermarks added to your output images</li>
+                <li>Supports all common image formats: JPG, PNG, WebP</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Content -->
+  <section class="section bg-gray-50 dark:bg-gray-950">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-8 md:col-10">
+          <h2 class="text-h3 mb-6">How to Resize an Image Without Cropping for Social Media</h2>
+          <div class="space-y-4 text-gray-700 dark:text-gray-300">
+            <p>
+              When you need to fit an image into social media but don't want to crop out any important details, our <strong>no-crop resize tool</strong> is the perfect solution. It automatically expands the canvas and adds padding so your <strong>entire image fits perfectly</strong> into any target aspect ratio without cutting anything.
+            </p>
+
+            <p>
+              You can choose from three popular padding styles:
+            </p>
+
+            <ul class="list-disc pl-6 space-y-2">
+              <li><strong>Blur Background</strong> – Uses a blurred version of your original image as the padding background (modern and most popular choice)</li>
+              <li><strong>Solid Color</strong> – Use any solid color for padding; you can pick exactly what color you want with our color picker</li>
+              <li><strong>White</strong> – Classic clean white borders</li>
+            </ul>
+
+            <p>
+              This technique is perfect when:
+            </p>
+
+            <ul class="list-disc pl-6 space-y-2">
+              <li>You want to post a full photo to Instagram without cropping</li>
+              <li>You need to fit a vertical image into a horizontal frame</li>
+              <li>You don't want to lose any important content from your original image</li>
+              <li>You need to quickly adapt an image for multiple social media platforms</li>
+            </ul>
+
+            <h3 class="text-h4 mt-8 mb-4">Supported Aspect Ratios</h3>
+
+            <p>We support all common social media aspect ratios:</p>
+
+            <table class="w-full border-collapse border border-gray-300 dark:border-gray-700 my-6">
+              <thead>
+                <tr class="bg-gray-100 dark:bg-gray-900">
+                  <th class="border border-gray-300 dark:border-gray-700 px-4 py-2 text-left">Aspect Ratio</th>
+                  <th class="border border-gray-300 dark:border-gray-700 px-4 py-2 text-left">Common Uses</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">1:1</td>
+                  <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">Instagram Square Posts</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">4:5</td>
+                  <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">Instagram Portrait Posts</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">16:9</td>
+                  <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">YouTube Thumbnails, YouTube Videos</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">9:16</td>
+                  <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">Instagram Stories, TikTok, Reels</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 class="text-h4 mt-8 mb-4">Frequently Asked Questions</h3>
+
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-semibold mb-2">Will I lose quality when resizing without cropping?</h4>
+                <p>No, we maintain the maximum possible quality. Your original image remains completely intact and we only add padding around it. You can export in high quality PNG, JPG, or WebP.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Can I choose a custom background color?</h4>
+                <p>Yes, when you select solid color mode, you can pick any color you want using the color picker.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Does this work for all aspect ratios?</h4>
+                <p>We have one-click presets for all common social media aspect ratios including 1:1, 4:5, 16:9, and 9:16 which covers the needs of most social media platforms.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Is this tool really free?</h4>
+                <p>Yes! 100% free forever. All processing happens directly in your browser, so your images never get uploaded to any server. Complete privacy, no watermarks, no sign-up required.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Tools -->
+          <div class="mt-12">
+            <h3 class="text-h4 mb-4">Try Our Other Free Social Media Tools</h3>
+            <div class="grid grid-cols-2 gap-3">
+              <a href="/instagram-photo-cropper" class="p-3 border border-gray-200 dark:border-gray-800 rounded hover:border-primary dark:hover:border-darkmode-primary transition-colors">
+                <span class="font-medium">Instagram Photo Cropper</span>
+              </a>
+              <a href="/youtube-thumbnail-resizer" class="p-3 border border-gray-200 dark:border-gray-800 rounded hover:border-primary dark:hover:border-darkmode-primary transition-colors">
+                <span class="font-medium">YouTube Thumbnail Resizer</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Resize Image Without Cropping",
+    "description": "Fit your full picture into any social media aspect ratio without cropping out key details. Add blurred, white, or custom color borders easily. Free online no-crop resizer.",
+    "url": "https://socialcrop.app/resize-image-without-cropping",
+    "applicationCategory": "PhotoEditor",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I resize an image without cropping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Upload your image, select your target aspect ratio, choose your preferred background padding style (blur, solid color, or white), then download your resized image. Your entire image fits perfectly in the target size without any cropping."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I lose quality when resizing without cropping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, we maintain the maximum possible quality. Your original image remains completely intact and we only add padding around it. You can export in high quality PNG, JPG, or WebP."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use a custom background color?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, when you select solid color mode, you can pick any color you want using the color picker."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this tool really free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! 100% free forever. All processing happens directly in your browser, so your images never get uploaded to any server. Complete privacy, no watermarks, no sign-up required."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script is:inline>
+  (function () {
+    const ACTIVE = ['bg-primary', 'text-white', 'border-primary', 'dark:bg-darkmode-primary', 'dark:text-text-dark', 'dark:border-darkmode-primary'];
+    const INACTIVE = ['bg-white', 'dark:bg-gray-800', 'border-gray-300', 'dark:border-gray-700', 'text-gray-700', 'dark:text-gray-300', 'hover:border-primary', 'dark:hover:border-darkmode-primary'];
+
+    const PRESETS_MAP = {
+      '1:1': { name: 'Square 1:1', width: 1080, height: 1080, aspectRatio: 1/1 },
+      '4:5': { name: 'Portrait 4:5', width: 1080, height: 1350, aspectRatio: 4/5 },
+      '16:9': { name: 'Landscape 16:9', width: 1280, height: 720, aspectRatio: 16/9 },
+      '9:16': { name: 'Vertical 9:16', width: 1080, height: 1920, aspectRatio: 9/16 }
+    };
+
+    function initPresets() {
+      const presetButtons = document.querySelectorAll('#preset-buttons button');
+      if (!presetButtons.length) return;
+      const container = document.getElementById('preset-buttons');
+      if (container && container.dataset.bound === '1') return;
+      if (container) container.dataset.bound = '1';
+
+      presetButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          const key = this.getAttribute('data-preset');
+          const preset = PRESETS_MAP[key];
+
+          // Update active button styling
+          presetButtons.forEach(btn => {
+            btn.classList.remove(...ACTIVE);
+            btn.classList.add(...INACTIVE);
+          });
+          this.classList.remove(...INACTIVE);
+          this.classList.add(...ACTIVE);
+
+          // Notify the ImageEditor island to adopt the new target size
+          if (preset) {
+            window.dispatchEvent(new CustomEvent('socialcrop:preset-change', { detail: preset }));
+          }
+
+          const editor = document.getElementById('editor');
+          if (editor) editor.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPresets);
+    } else {
+      initPresets();
+    }
+    document.addEventListener('astro:page-load', initPresets);
+  })();
+  </script>
+</Base>

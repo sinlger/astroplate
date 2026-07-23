@@ -1,0 +1,317 @@
+﻿---
+import Base from "@/layouts/Base.astro";
+import Breadcrumbs from "@/layouts/components/Breadcrumbs.astro";
+import ImageEditor from "@/layouts/components/ImageEditor";
+import { PRESETS } from "@/lib/imageProcessor";
+
+const title = "Instagram Photo Cropper & Resizer - Fit Posts, Stories & Reels";
+const description = "Crop and resize photos for Instagram posts (1:1), portraits (4:5), and stories (9:16) without losing quality. Free online IG photo converter and resizer. Change aspect ratio for Instagram without cropping.";
+---
+
+<Base title={title} description={description}>
+  <div class="container pt-6">
+    <div class="row justify-center">
+      <div class="lg:col-10 md:col-12">
+        <Breadcrumbs />
+      </div>
+    </div>
+  </div>
+
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10 md:col-12">
+          <div class="text-center mb-8">
+            <h1 class="text-h2 lg:text-h1 mb-4">
+              Instagram Photo Cropper & Resizer
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Perfectly crop and resize your photos for <strong>Instagram posts, Stories, and Reels</strong> in one click. 100% free online tool, no quality loss. Change aspect ratio for Instagram without cropping.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 mb-8">
+            <div class="mb-6">
+              <h3 class="text-lg font-medium mb-3 text-center">Choose Instagram Format</h3>
+              <div id="preset-buttons" class="flex flex-wrap justify-center gap-3">
+                <button data-preset="square" class="px-4 py-2 rounded-md border transition-colors bg-primary text-white border-primary dark:bg-darkmode-primary dark:text-text-dark dark:border-darkmode-primary">
+                  Square (1:1) - 1080×1080
+                </button>
+                <button data-preset="portrait" class="px-4 py-2 rounded-md border transition-colors bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-primary dark:hover:border-darkmode-primary">
+                  Portrait (4:5) - 1080×1350
+                </button>
+                <button data-preset="story" class="px-4 py-2 rounded-md border transition-colors bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-primary dark:hover:border-darkmode-primary">
+                  Story/Reels (9:16) - 1080×1920
+                </button>
+              </div>
+              <p class="text-sm text-center text-gray-500 mt-2">Click a preset above to change format</p>
+            </div>
+
+            <div id="editor">
+              <ImageEditor client:load preset={PRESETS.instagram.square} allowPadding={true} defaultPadding="none" />
+            </div>
+          </div>
+
+          <!-- Step-by-Step Instructions for Beginners -->
+          <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 mb-12">
+            <h2 class="text-h4 mb-4">How to Crop Photos for Instagram (Beginners Guide)</h2>
+            <ol class="list-decimal pl-6 space-y-3 text-gray-700 dark:text-gray-300">
+              <li class="pl-2">
+                <strong>Choose your Instagram format</strong> above:
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                  <li>Square Post (1:1) - 1080×1080 pixels</li>
+                  <li>Portrait Post (4:5) - 1080×1350 pixels (most popular for Instagram feed posts)</li>
+                  <li>Story / Reels (9:16) - 1080×1920 pixels</li>
+                </ul>
+              </li>
+              <li class="pl-2">
+                <strong>Upload your photo</strong> by clicking the upload area. You can also drag and drop your image directly.
+              </li>
+              <li class="pl-2">
+                <strong>Adjust your crop</strong> by dragging the image to position it exactly how you want.
+              </li>
+              <li class="pl-2">
+                <strong>Use No-Crop mode if you don't want to cut anything</strong>:
+                <br>Select "Blur Background" or "Solid Color" to add padding instead of cropping your photo. This fits your entire image into Instagram's required size.
+              </li>
+              <li class="pl-2">
+                <strong>Choose your export format</strong> (PNG, JPG, or WebP) and click "Download Image".
+              </li>
+              <li class="pl-2">
+                Your resized photo is ready! Upload it to Instagram and you're finished.
+              </li>
+            </ol>
+          </div>
+
+          <!-- Product Introduction -->
+          <div class="mb-12">
+            <h2 class="text-h3 mb-6">About Our Instagram Photo Cropper</h2>
+            <div class="bg-white dark:bg-gray-900 rounded-lg p-6 shadow-sm">
+              <h3 class="text-h4 mb-4">What is this tool?</h3>
+              <p class="text-gray-700 dark:text-gray-300 mb-4">
+                Our Instagram Photo Cropper is a <strong>free online tool</strong> designed specifically to help you crop and resize photos for Instagram. Whether you need a square post, portrait post, or Instagram Story, our tool gives you the exact dimensions Instagram requires without losing quality.
+              </p>
+
+              <h3 class="text-h4 mb-4 mt-6">Common Use Cases</h3>
+              <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+                <li>Preparing photos for your Instagram feed</li>
+                <li>Resizing images to fit Instagram's aspect ratio requirements</li>
+                <li>Creating content for Instagram Stories and Reels</li>
+                <li>Converting horizontal photos to vertical without cropping</li>
+                <li>Preparing profile pictures for Instagram</li>
+              </ul>
+
+              <h3 class="text-h4 mb-4 mt-6">Usage Limits</h3>
+              <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+                <li>Maximum input file size: 10MB per image</li>
+                <li>All processing happens locally in your browser - we don't store any images on our servers</li>
+                <li>Unlimited usage - use the tool as many times as you want for free</li>
+                <li>No watermarks added to your output images</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Content -->
+  <section class="section bg-gray-50 dark:bg-gray-950">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-8 md:col-10">
+          <h2 class="text-h3 mb-6">Why Instagram Crops Your Photos (And How To Avoid It)</h2>
+
+          <div class="space-y-4 text-gray-700 dark:text-gray-300">
+            <p>
+              Instagram enforces strict <strong>aspect ratio limits</strong> for photos. If your photo doesn't match their required dimensions, Instagram will automatically crop it, often cutting off important parts of your image like faces, text, or key objects.
+            </p>
+
+            <p>
+              With our free <strong>Instagram photo cropper</strong>, you can easily:
+            </p>
+
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Crop your photo to fit Instagram's exact size requirements</li>
+              <li>Use <strong>No-Crop mode</strong> to add borders instead of cutting your photo</li>
+              <li>Export at full resolution with no quality loss</li>
+              <li>Resize for Instagram posts, Stories, and Reels all in one tool</li>
+            </ul>
+
+            <h3 class="text-h4 mt-8 mb-4">Instagram Photo Size Guide 2024</h3>
+            <table class="w-full border-collapse border border-gray-300 dark:border-gray-700 my-6">
+              <thead>
+                <tr class="bg-gray-100 dark:bg-gray-900">
+                  <th class="border border-gray-300 dark:border-gray-700 px-4 py-2 text-left">Instagram Content Type</th>
+                  <th class="border border-gray-300 dark:border-gray-700 px-4 py-2 text-left">Dimensions</th>
+                  <th class="border border-gray-300 dark:border-gray-700 px-4 py-2 text-left">Aspect Ratio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">Square Post</td>
+                  <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">1080 × 1080</td>
+                  <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">1:1</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">Portrait Post</td>
+                  <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">1080 × 1350</td>
+                  <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">4:5</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">Story / Reels</td>
+                  <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">1080 × 1920</td>
+                  <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">9:16</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 class="text-h4 mt-8 mb-4">Frequently Asked Questions</h3>
+
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-semibold mb-2">Why does Instagram crop my photos?</h4>
+                <p>Instagram automatically crops photos that don't fit their approved aspect ratios. They do this to create a consistent look across the platform, but it often cuts off important parts of your image. Our Instagram photo cropper helps you avoid this by letting you control exactly what gets cropped or add padding instead.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">What is No-Crop mode for Instagram?</h4>
+                <p>No-Crop mode adds padding (blurred background or solid color) to your image instead of cropping, allowing your entire photo to fit within Instagram's requirements without cutting anything. This is perfect when you don't want to lose any part of your picture.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Will this Instagram resizer reduce image quality?</h4>
+                <p>No, our tool preserves the maximum possible quality. You can export in PNG, JPEG, or WebP format at high quality settings. Unlike other online tools, we don't compress your image unnecessarily.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">How do I fit the whole picture on Instagram without cropping?</h4>
+                <p>Use our No-Crop mode. Instead of cropping, it adds borders to your image so the entire picture fits within Instagram's required aspect ratio without cutting anything out.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Tools -->
+          <div class="mt-12">
+            <h3 class="text-h4 mb-4">Try Our Other Free Instagram Tools</h3>
+            <div class="grid grid-cols-2 gap-3">
+              <a href="/instagram-grid-splitter" class="p-3 border border-gray-200 dark:border-gray-800 rounded hover:border-primary dark:hover:border-darkmode-primary transition-colors">
+                <span class="font-medium">Instagram Grid Splitter</span>
+              </a>
+              <a href="/youtube-thumbnail-resizer" class="p-3 border border-gray-200 dark:border-gray-800 rounded hover:border-primary dark:hover:border-darkmode-primary transition-colors">
+                <span class="font-medium">YouTube Thumbnail Resizer</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Instagram Photo Cropper & Resizer",
+    "description": "Crop and resize photos for Instagram posts (1:1), portraits (4:5), and stories (9:16) without losing quality. Free online IG photo converter and resizer.",
+    "url": "https://socialcrop.app/instagram-photo-cropper",
+    "applicationCategory": "PhotoEditor",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why does Instagram crop my photos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Instagram automatically crops photos that don't fit their approved aspect ratios. They do this to create a consistent look across the platform, but it often cuts off important parts of your image. Our Instagram photo cropper helps you avoid this by letting you control exactly what gets cropped or add padding instead."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best size for an Instagram post?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The best sizes for Instagram posts are 1080×1080 for square (1:1), 1080×1350 for portrait (4:5), and 1080×1920 for stories/reels (9:16)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I post a full picture on Instagram without cropping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use our No-Crop mode. Instead of cropping, it adds borders to your image so the entire picture fits within Instagram's required aspect ratio without cutting anything out."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will resizing for Instagram reduce image quality?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, our tool preserves the maximum possible quality. You can export in PNG, JPEG, or WebP format at high quality settings."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script is:inline>
+  (function () {
+    const ACTIVE = ['bg-primary', 'text-white', 'border-primary', 'dark:bg-darkmode-primary', 'dark:text-text-dark', 'dark:border-darkmode-primary'];
+    const INACTIVE = ['bg-white', 'dark:bg-gray-800', 'border-gray-300', 'dark:border-gray-700', 'text-gray-700', 'dark:text-gray-300', 'hover:border-primary', 'dark:hover:border-darkmode-primary'];
+
+    const PRESETS_MAP = {
+      square: { name: 'Square Post', width: 1080, height: 1080, aspectRatio: 1/1 },
+      portrait: { name: 'Portrait Post', width: 1080, height: 1350, aspectRatio: 4/5 },
+      story: { name: 'Story/Reels', width: 1080, height: 1920, aspectRatio: 9/16 }
+    };
+
+    function initPresets() {
+      const presetButtons = document.querySelectorAll('#preset-buttons button');
+      if (!presetButtons.length) return;
+      const container = document.getElementById('preset-buttons');
+      if (container && container.dataset.bound === '1') return;
+      if (container) container.dataset.bound = '1';
+
+      presetButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          const key = this.getAttribute('data-preset');
+          const preset = PRESETS_MAP[key];
+
+          // Update active button styling
+          presetButtons.forEach(btn => {
+            btn.classList.remove(...ACTIVE);
+            btn.classList.add(...INACTIVE);
+          });
+          this.classList.remove(...INACTIVE);
+          this.classList.add(...ACTIVE);
+
+          // Notify the ImageEditor island to adopt the new target size
+          if (preset) {
+            window.dispatchEvent(new CustomEvent('socialcrop:preset-change', { detail: preset }));
+          }
+
+          const editor = document.getElementById('editor');
+          if (editor) editor.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPresets);
+    } else {
+      initPresets();
+    }
+    document.addEventListener('astro:page-load', initPresets);
+  })();
+  </script>
+</Base>

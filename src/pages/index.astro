@@ -1,104 +1,243 @@
----
-import ImageMod from "@/components/ImageMod.astro";
+﻿---
 import Base from "@/layouts/Base.astro";
-import { getListPage } from "@/lib/contentParser.astro";
-import { markdownify } from "@/lib/utils/textConverter";
-import CallToAction from "@/partials/CallToAction.astro";
-import Testimonial from "@/partials/Testimonial.astro";
-import { FaCheck } from "react-icons/fa";
+import Breadcrumbs from "@/layouts/components/Breadcrumbs.astro";
+import ImageEditor from "@/layouts/components/ImageEditor";
+import { PRESETS } from "@/lib/imageProcessor";
 
-const homepage = await getListPage("homepage", "-index");
-const call_to_action = await getListPage("ctaSection", "call-to-action");
-const testimonial = await getListPage("testimonialSection", "testimonial");
-
-const { banner, features } = homepage.data;
+const title = "Social Media Image Resizer - Crop & Resize Photos Online Free";
+const description = "Easily resize and crop images for YouTube, Instagram, Twitter, Facebook, and TikTok. 100% free, no quality loss, and instant browser processing. Best free online social media image cropper.";
 ---
 
-<Base>
-  <!-- Banner -->
-  <section class="section pt-14">
-    <div class="container">
-      <div class="row justify-center">
-        <div class="lg:col-7 md:col-9 mb-8 text-center">
-          <h1
-            set:html={markdownify(banner.title)}
-            class="mb-4 text-h3 lg:text-h1"
-          />
-          <p set:html={markdownify(banner.content)} class="mb-8" />
-          {
-            banner.button.enable && (
-              <a
-                class="btn btn-primary"
-                href={banner.button.link}
-                target={
-                  banner.button.link.startsWith("http") ? "_blank" : "_self"
-                }
-                rel="noopener"
-              >
-                {banner.button.label}
-              </a>
-            )
-          }
-        </div>
-        {
-          banner.image && (
-            <div class="col-12">
-              <ImageMod
-                src={banner.image}
-                height={380}
-                width={1200}
-                alt="banner"
-                format="webp"
-              />
-            </div>
-          )
-        }
+<Base title={title} description={description}>
+  <div class="container pt-6">
+    <div class="row justify-center">
+      <div class="lg:col-10 md:col-12">
+        <Breadcrumbs />
       </div>
     </div>
-  </section>
-  <!-- /Banner -->
+  </div>
 
-  <!-- Features -->
-  {
-    features.map((feature, index: number) => (
-      <section class={`section-sm ${index % 2 === 0 && "bg-gradient"}`}>
-        <div class="container">
-          <div class="row items-center justify-between">
-            <div
-              class={`mb:md-0 mb-6 md:col-5 ${index % 2 !== 0 && "md:order-2"}`}
-            >
-              <ImageMod
-                src={feature.image}
-                height={480}
-                width={520}
-                alt={feature.title}
-                format="webp"
-              />
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10 md:col-12">
+          <div class="text-center mb-10">
+            <h1 class="text-h2 lg:text-h1 mb-4">
+              Free Social Media Image Resizer
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              Easily resize and crop your images for <strong>all social media platforms</strong> in one click. 100% free, no quality loss, everything happens directly in your browser. No uploads, no waiting.
+            </p>
+          </div>
+
+          <!-- Main Image Editor -->
+          <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 mb-10">
+            <h2 class="text-center text-h4 mb-4">Try It Now</h2>
+            <ImageEditor client:load preset={PRESETS.common["1:1"]} allowPadding={true} />
+          </div>
+
+          <!-- Quick Links to Tools -->
+          <div class="mt-12 mb-10">
+            <h2 class="text-h3 mb-6 text-center">Choose Your Tool by Platform</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <a href="/youtube-thumbnail-resizer" class="p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-primary dark:hover:border-darkmode-primary transition-colors hover:shadow-md">
+                <h3 class="font-semibold text-lg mb-1">YouTube Thumbnail Resizer</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Resize to exact 1280×720 (16:9) size</p>
+              </a>
+              <a href="/instagram-photo-cropper" class="p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-primary dark:hover:border-darkmode-primary transition-colors hover:shadow-md">
+                <h3 class="font-semibold text-lg mb-1">Instagram Photo Cropper</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Fit posts, Stories & Reels (1:1, 4:5, 9:16)</p>
+              </a>
+              <a href="/instagram-grid-splitter" class="p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-primary dark:hover:border-darkmode-primary transition-colors hover:shadow-md">
+                <h3 class="font-semibold text-lg mb-1">Instagram Grid Splitter</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Split into 3x1, 3x2, 3x3 seamless tiles</p>
+              </a>
+              <a href="/twitter-header-resizer" class="p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-primary dark:hover:border-darkmode-primary transition-colors hover:shadow-md">
+                <h3 class="font-semibold text-lg mb-1">Twitter Header Resizer</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Resize to 1500×500 with avatar preview</p>
+              </a>
+              <a href="/resize-image-without-cropping" class="p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-primary dark:hover:border-darkmode-primary transition-colors hover:shadow-md">
+                <h3 class="font-semibold text-lg mb-1">Resize Image Without Cropping</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Fit any size without cutting your image</p>
+              </a>
             </div>
-            <div class={`md:col-7 lg:col-6 ${index % 2 !== 0 && "md:order-1"}`}>
-              <h2 set:html={markdownify(feature.title)} class="mb-4" />
-              <p set:html={markdownify(feature.content)} class="mb-8 text-lg" />
-              <ul>
-                {feature.bulletpoints.map((bullet: string) => (
-                  <li class="relative mb-4 pl-6">
-                    <FaCheck className={"absolute left-0 top-1.5"} />
-                    <span set:html={markdownify(bullet)} />
-                  </li>
-                ))}
-              </ul>
-              {feature.button.enable && (
-                <a class="btn btn-primary mt-5" href={feature.button.link}>
-                  {feature.button.label}
-                </a>
-              )}
+          </div>
+
+          <!-- Simple Steps for Beginners -->
+          <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 mb-10">
+            <h2 class="text-h4 mb-4 text-center">How to Resize Images for Social Media (3 Easy Steps)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="text-center">
+                <div class="w-12 h-12 bg-primary text-white dark:bg-darkmode-primary dark:text-text-dark rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-3">1</div>
+                <h3 class="font-semibold mb-2">Upload Your Image</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Click to upload or drag and drop. All processing happens in your browser - we never see your image.</p>
+              </div>
+              <div class="text-center">
+                <div class="w-12 h-12 bg-primary text-white dark:bg-darkmode-primary dark:text-text-dark rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-3">2</div>
+                <h3 class="font-semibold mb-2">Adjust & Preview</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Drag to position your image. Choose padding style if needed. See preview instantly.</p>
+              </div>
+              <div class="text-center">
+                <div class="w-12 h-12 bg-primary text-white dark:bg-darkmode-primary dark:text-text-dark rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-3">3</div>
+                <h3 class="font-semibold mb-2">Download</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Choose your format (PNG/JPG/WebP) and download your resized image. Done!</p>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-    ))
-  }
-  <!-- /Features -->
+      </div>
+    </div>
+  </section>
 
-  <Testimonial testimonial={testimonial} />
-  <CallToAction call_to_action={call_to_action} />
+  <!-- SEO Content -->
+  <section class="section bg-gray-50 dark:bg-gray-950">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-8 md:col-10">
+          <h2 class="text-h3 mb-6">Why Use SocialCrop for Your Social Media Images?</h2>
+
+          <div class="space-y-4 text-gray-700 dark:text-gray-300">
+            <p>
+              <strong>✅ 100% Free & Private</strong> – All image processing happens directly in your browser. Your images never leave your device, so you retain complete privacy and there's no waiting for slow server uploads/downloads.
+            </p>
+            <p>
+              <strong>✅ No Quality Loss</strong> – Export your images in the highest quality available. Full support for PNG, JPG, and WebP formats with high quality settings.
+            </p>
+            <p>
+              <strong>✅ Optimized for All Platforms</strong> – We've pre-configured all the <strong>exact sizes every social media platform requires</strong>. From YouTube thumbnails to Instagram posts, we've got you covered with the correct dimensions.
+            </p>
+            <p>
+              <strong>✅ No Sign-up Required</strong> – Just upload and go. No email, no account creation, no watermarks on your images.
+            </p>
+
+            <h3 class="text-h4 mt-8 mb-4">Supported Platform Specifications</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full border-collapse border border-gray-300 dark:border-gray-700">
+                <thead>
+                  <tr class="bg-gray-100 dark:bg-gray-900">
+                    <th class="border border-gray-300 dark:border-gray-700 px-4 py-2 text-left">Platform</th>
+                    <th class="border border-gray-300 dark:border-gray-700 px-4 py-2 text-left">Content Type</th>
+                    <th class="border border-gray-300 dark:border-gray-700 px-4 py-2 text-left">Dimensions</th>
+                    <th class="border border-gray-300 dark:border-gray-700 px-4 py-2 text-left">Aspect Ratio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">YouTube</td>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">Thumbnail</td>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">1280 × 720</td>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">16:9</td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">Instagram</td>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">Square Post</td>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">1080 × 1080</td>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">1:1</td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">Instagram</td>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">Portrait Post</td>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">1080 × 1350</td>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">4:5</td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">Instagram</td>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">Story / Reels</td>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">1080 × 1920</td>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">9:16</td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">Twitter/X</td>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">Header Banner</td>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">1500 × 500</td>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">3:1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="text-h4 mt-8 mb-4">Frequently Asked Questions</h3>
+
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-semibold mb-2">Is SocialCrop really free?</h4>
+                <p>Yes! SocialCrop is 100% free to use for all your image resizing needs. No hidden fees, no watermarks, no sign-up required.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Will my images be stored on your servers?</h4>
+                <p>No, all processing happens directly in your browser. Your images never leave your device, ensuring complete privacy.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">What image formats does SocialCrop support?</h4>
+                <p>SocialCrop supports all common image formats for upload including PNG, JPG, JPEG, and WebP. You can export your processed images in PNG, JPEG, or WebP format.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Do I need to install any software?</h4>
+                <p>No installation needed. SocialCrop works entirely in your web browser. Just open the website and start resizing images.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "SocialCrop",
+    "description": "Free online social media image resizer and cropper. 100% free, no quality loss, instant browser processing. Best free online social media image cropper.",
+    "url": "https://socialcrop.app",
+    "applicationCategory": "PhotoEditor",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is SocialCrop really free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! SocialCrop is 100% free to use for all your image resizing needs. No hidden fees, no watermarks, no sign-up required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will my images be stored on your servers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, all processing happens directly in your browser. Your images never leave your device, ensuring complete privacy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What image formats does SocialCrop support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SocialCrop supports all common image formats for upload including PNG, JPG, JPEG, and WebP. You can export your processed images in PNG, JPEG, or WebP format."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to install any software?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No installation needed. SocialCrop works entirely in your web browser. Just open the website and start resizing images."
+        }
+      }
+    ]
+  }
+  </script>
 </Base>

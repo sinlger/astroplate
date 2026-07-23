@@ -1,0 +1,240 @@
+---
+import Base from "@/layouts/Base.astro";
+import Breadcrumbs from "@/layouts/components/Breadcrumbs.astro";
+import GridSplitter from "@/layouts/components/GridSplitter";
+
+const title = "Instagram Grid Splitter - Split Images into 3x1, 3x2, 3x3 Online";
+const description = "Split any photo into 3x1, 3x2, or 3x3 grid tiles for your Instagram feed. Preview your grid, download in order, or get a single ZIP file. Free online Instagram grid maker.";
+---
+
+<Base title={title} description={description}>
+  <div class="container pt-6">
+    <div class="row justify-center">
+      <div class="lg:col-10 md:col-12">
+        <Breadcrumbs />
+      </div>
+    </div>
+  </div>
+
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10 md:col-12">
+          <div class="text-center mb-8">
+            <h1 class="text-h2 lg:text-h1 mb-4">
+              Instagram Grid Splitter
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Split any large image into a <strong>beautiful seamless grid</strong> for your Instagram feed. Preview your grid before posting, download all tiles in a single ZIP. Free online Instagram grid maker.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 mb-8">
+            <GridSplitter client:load />
+          </div>
+
+          <!-- Step-by-Step Instructions for Beginners -->
+          <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 mb-12">
+            <h2 class="text-h4 mb-4">How to Make an Instagram Grid (Step by Step for Beginners)</h2>
+            <ol class="list-decimal pl-6 space-y-3 text-gray-700 dark:text-gray-300">
+              <li class="pl-2">
+                <strong>Choose your grid layout</strong>:
+                <ul class="list-disc pl-6 mt-2 space-y-1">
+                  <li>3x1 (Banner) - One row of three panoramic tiles</li>
+                  <li>3x2 - Two rows of three (6 total tiles)</li>
+                  <li>3x3 (Classic Grid) - Three rows of three (9 total tiles)</li>
+                </ul>
+              </li>
+              <li class="pl-2">
+                <strong>Upload your high-resolution image</strong>. For best results, use a square image that's at least 3240 pixels wide (1080 × 3).
+              </li>
+              <li class="pl-2">
+                <strong>Preview your grid</strong> - you'll see red dividing lines showing exactly where each tile will be cut.
+              </li>
+              <li class="pl-2">
+                <strong>Download your tiles</strong>: You can download individual tiles one by one, or click "Download All (ZIP)" to get everything in one file.
+              </li>
+              <li class="pl-2">
+                <strong>Upload to Instagram in order</strong> - Each tile is numbered so you know the correct posting order (from top-left to bottom-right).
+              </li>
+              <li class="pl-2">
+                Publish your stunning seamless Instagram grid and enjoy!
+              </li>
+            </ol>
+
+            <div class="mt-4 p-4 bg-yellow-50 dark:bg-yellow-900/30 rounded border-l-4 border-yellow-400">
+              <p class="text-sm"><strong>💡 Pro Tip:</strong> Upload tiles from <em>last to first</em> if you want them to appear in the correct order left-to-right on your Instagram grid. This is because Instagram always adds new posts to the top of your feed.</p>
+            </div>
+          </div>
+
+          <!-- Product Introduction -->
+          <div class="mb-12">
+            <h2 class="text-h3 mb-6">About Our Instagram Grid Splitter</h2>
+            <div class="bg-white dark:bg-gray-900 rounded-lg p-6 shadow-sm">
+              <h3 class="text-h4 mb-4">What is this tool?</h3>
+              <p class="text-gray-700 dark:text-gray-300 mb-4">
+                Our <strong>Instagram Grid Splitter</strong> is a free online tool that splits one large image into perfectly sized tiles for creating a seamless panoramic grid post on Instagram. Whether you want a 3-panel banner or a full 3×3 grid, our tool gives you correctly sized tiles ready to upload.
+              </p>
+
+              <h3 class="text-h4 mb-4 mt-6">Common Use Cases</h3>
+              <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+                <li>Creating seamless panoramic grid posts for Instagram</li>
+                <li>Making a big statement with a multi-post panorama</li>
+                <li>Creating a branded grid layout on your profile</li>
+                <li>Splitting a large photo into multiple carousel posts</li>
+                <li>Creating featured artist grids or portfolio showcases</li>
+              </ul>
+
+              <h3 class="text-h4 mb-4 mt-6">Usage Limits</h3>
+              <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+                <li>Maximum input file size: 10MB per image</li>
+                <li>Unlimited usage - split as many images as you want for free</li>
+                <li>All processing happens locally in your browser - we never store your images</li>
+                <li>No watermarks added to your output tiles</li>
+                <li>Each tile is automatically sized to 1080×1080 pixels which is perfect for Instagram</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Content -->
+  <section class="section bg-gray-50 dark:bg-gray-950">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-8 md:col-10">
+          <h2 class="text-h3 mb-6">How to Create a Beautiful Seamless Instagram Grid Post</h2>
+
+          <div class="space-y-4 text-gray-700 dark:text-gray-300">
+            <p>
+              Creating a panoramic seamless grid post on Instagram used to be complicated and time-consuming. With our free online Instagram grid splitter, you can split any large image into perfectly sized tiles in just a few clicks.
+            </p>
+
+            <p>
+              A well-designed Instagram grid can help you:
+            </p>
+
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Create stunning panoramic visuals that grab attention</li>
+              <li>Tell a bigger story across multiple posts</li>
+              <li>Make your profile look more professional and organized</li>
+              <li>Increase engagement with your audience</li>
+            </ul>
+
+            <h3 class="text-h4 mt-8 mb-4">Popular Grid Layouts</h3>
+
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-semibold">3x1 (Banner)</h4>
+                <p>Best for wide panoramic images. Creates a single banner across three posts in your Instagram grid.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold">3x2</h4>
+                <p>Medium-size panorama across 6 posts. Great for showcasing products or landscapes.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold">3x3 (Classic)</h4>
+                <p>The original seamless grid. Creates a large 3×3 square mosaic from one big image.</p>
+              </div>
+            </div>
+
+            <h3 class="text-h4 mt-8 mb-4">Frequently Asked Questions</h3>
+
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-semibold mb-2">What size should my original image be?</h4>
+                <p>For the best quality, use an image that's at least 3240 pixels wide for a 3-column grid (1080 pixels × 3 columns). This ensures each tile will be 1080 pixels which is the optimal size for Instagram.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Can I download all tiles at once?</h4>
+                <p>Yes! You can download all grid tiles in a single ZIP file which keeps everything organized and saves you time. Each tile is automatically numbered so you know the correct posting order.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">What order should I post my grid tiles?</h4>
+                <p>Our tool numbers tiles from top-left to bottom-right. To get the correct order on your Instagram grid, we recommend posting from bottom-right to top-left (reverse order) because new posts always appear at the top of your profile.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">Is this Instagram grid maker free?</h4>
+                <p>Yes! This Instagram grid splitter is 100% free to use. All processing happens in your browser so we never store your images. No watermarks, no sign-up required.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Tools -->
+          <div class="mt-12">
+            <h3 class="text-h4 mb-4">Try Our Other Free Instagram Tools</h3>
+            <div class="grid grid-cols-2 gap-3">
+              <a href="/instagram-photo-cropper" class="p-3 border border-gray-200 dark:border-gray-800 rounded hover:border-primary dark:hover:border-darkmode-primary transition-colors">
+                <span class="font-medium">Instagram Photo Cropper</span>
+              </a>
+              <a href="/resize-image-without-cropping" class="p-3 border border-gray-200 dark:border-gray-800 rounded hover:border-primary dark:hover:border-darkmode-primary transition-colors">
+                <span class="font-medium">Resize Without Cropping</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Instagram Grid Splitter",
+    "description": "Split any photo into 3x1, 3x2, or 3x3 grid tiles for your Instagram feed. Preview your grid, download in order, or get a single ZIP file. Free online Instagram grid maker.",
+    "url": "https://socialcrop.app/instagram-grid-splitter",
+    "applicationCategory": "PhotoEditor",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What size should my original image be for an Instagram grid?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For the best quality, use an image that's at least 3240 pixels wide for a 3-column grid (1080 pixels × 3 columns). This ensures each tile will be 1080 pixels which is the optimal size for Instagram."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I download all grid tiles at once?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! You can download all grid tiles in a single ZIP file which keeps everything organized and saves you time. Each tile is automatically numbered so you know the correct posting order."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What order should I post my Instagram grid tiles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our tool numbers tiles from top-left to bottom-right. To get the correct order on your Instagram grid, we recommend posting from bottom-right to top-left (reverse order) because new posts always appear at the top of your profile."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this Instagram grid maker free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! This Instagram grid splitter is 100% free to use. All processing happens in your browser so we never store your images. No watermarks, no sign-up required."
+        }
+      }
+    ]
+  }
+  </script>
+</Base>

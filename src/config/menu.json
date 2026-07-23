@@ -1,53 +1,49 @@
-{
+﻿{
   "main": [
     {
       "name": "Home",
       "url": "/"
     },
     {
-      "name": "About",
-      "url": "/about"
-    },
-    {
-      "name": "Elements",
-      "url": "/elements"
-    },
-    {
-      "name": "Pages",
+      "name": "Tools",
       "url": "",
       "hasChildren": true,
       "children": [
         {
-          "name": "Contact",
-          "url": "/contact"
+          "name": "YouTube Thumbnail",
+          "url": "/youtube-thumbnail-resizer"
         },
         {
-          "name": "Blog",
-          "url": "/blog"
+          "name": "Instagram Cropper",
+          "url": "/instagram-photo-cropper"
         },
         {
-          "name": "Authors",
-          "url": "/authors"
+          "name": "Instagram Grid",
+          "url": "/instagram-grid-splitter"
         },
         {
-          "name": "Categories",
-          "url": "/categories"
+          "name": "Twitter Header",
+          "url": "/twitter-header-resizer"
         },
         {
-          "name": "Tags",
-          "url": "/tags"
-        },
-        {
-          "name": "404 Page",
-          "url": "/404"
+          "name": "No-Crop Resize",
+          "url": "/resize-image-without-cropping"
         }
       ]
+    },
+    {
+      "name": "About",
+      "url": "/about"
     }
   ],
   "footer": [
     {
-      "name": "Elements",
-      "url": "/elements"
+      "name": "YouTube Thumbnail Resizer",
+      "url": "/youtube-thumbnail-resizer"
+    },
+    {
+      "name": "Instagram Photo Cropper",
+      "url": "/instagram-photo-cropper"
     },
     {
       "name": "Privacy Policy",
