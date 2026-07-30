@@ -1,9 +1,9 @@
 ﻿---
 title: "How to Post Full Pictures on Instagram Without Cropping (Step-by-Step)"
-meta_title: "How to Post Full Pictures on Instagram Without Cropping 2026
+meta_title: "How to Post Full Pictures on Instagram Without Cropping 2026"
 description: "Learn how to fit whole photos on Instagram without cutting off important parts. Add white borders or blur background for free in 3 seconds."
 date: 2026-07-24T00:00:00Z
-image: "/images/blog/post-full-picture-instagram.jpg
+image: "/images/blog/post-full-picture-instagram.jpg"
 categories: ["Instagram", "Image Tools"]
 author: "ImageTools"
 tags: ["instagram", "cropping", "resize"]

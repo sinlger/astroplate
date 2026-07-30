@@ -1,6 +1,6 @@
 ---
 
-# 🎯 SocialCrop：SEO 流量拦截与产品功能落地方案
+# 🎯 PhotoCroply：SEO 流量拦截与产品功能落地方案
 
 ---
 

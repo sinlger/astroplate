@@ -1,4 +1,4 @@
-﻿---
+---
 import Base from "@/layouts/Base.astro";
 import Breadcrumbs from "@/layouts/components/Breadcrumbs.astro";
 import ImageEditor from "@/layouts/components/ImageEditor";
@@ -212,7 +212,7 @@ const description = "Crop and resize photos for Instagram posts (1:1), portraits
     "@type": "WebApplication",
     "name": "Instagram Photo Cropper & Resizer",
     "description": "Crop and resize photos for Instagram posts (1:1), portraits (4:5), and stories (9:16) without losing quality. Free online IG photo converter and resizer.",
-    "url": "https://socialcrop.app/instagram-photo-cropper",
+    "url": "https://photocroply.com/instagram-photo-cropper",
     "applicationCategory": "PhotoEditor",
     "operatingSystem": "Any",
     "offers": {
@@ -220,6 +220,27 @@ const description = "Crop and resize photos for Instagram posts (1:1), portraits
       "price": "0",
       "priceCurrency": "USD"
     }
+  }
+  </script>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://photocroply.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Instagram Photo Cropper & Resizer",
+        "item": "https://photocroply.com/instagram-photo-cropper"
+      }
+    ]
   }
   </script>
 
@@ -297,7 +318,7 @@ const description = "Crop and resize photos for Instagram posts (1:1), portraits
 
           // Notify the ImageEditor island to adopt the new target size
           if (preset) {
-            window.dispatchEvent(new CustomEvent('socialcrop:preset-change', { detail: preset }));
+            window.dispatchEvent(new CustomEvent('photocroply:preset-change', { detail: preset }));
           }
 
           const editor = document.getElementById('editor');

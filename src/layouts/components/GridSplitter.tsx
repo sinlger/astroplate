@@ -1,4 +1,4 @@
-﻿import React, { useRef, useState, useEffect, useCallback } from 'react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 import type { GridSplitOptions } from '@/lib/imageProcessor';
 import {
   loadImage,
@@ -97,7 +97,7 @@ const GridSplitter: React.FC<GridSplitterProps> = () => {
   // Download all tiles as ZIP
   const handleDownloadZip = async () => {
     if (tiles.length === 0) return;
-    await createZipDownload(tiles, 'socialcrop-grid', outputFormat, 0.95);
+    await createZipDownload(tiles, 'photocroply-grid', outputFormat, 0.95);
   };
 
   return (

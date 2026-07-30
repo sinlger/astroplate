@@ -33,6 +33,13 @@ export interface Props {
 // destructure frontmatter
 const { title, meta_title, description, image, noindex, canonical } =
   Astro.props;
+
+// canonical url - use the explicit prop when provided, otherwise
+// derive an absolute canonical from the current path + configured site.
+// (Astro.site comes from `site` in astro.config.mjs / config.base_url)
+const canonicalURL = canonical
+  ? canonical
+  : new URL(Astro.url.pathname, Astro.site).href;
 ---
 
 <!doctype html>
@@ -69,7 +76,7 @@ const { title, meta_title, description, image, noindex, canonical } =
         return <Font cssVariable={cssVar} preload />;
       })
     }
-
+    <meta charset="utf-8" />
     <!-- responsive meta -->
     <meta
       name="viewport"
@@ -82,7 +89,7 @@ const { title, meta_title, description, image, noindex, canonical } =
     </title>
 
     <!-- canonical url -->
-    {canonical && <link rel="canonical" href={canonical} item-prop="url" />}
+    <link rel="canonical" href={canonicalURL} item-prop="url" />
 
     <!-- noindex robots -->
     {noindex && <meta name="robots" content="noindex,nofollow" />}
@@ -118,7 +125,7 @@ const { title, meta_title, description, image, noindex, canonical } =
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
-      content={`${config.site.base_url}/${Astro.url.pathname.replace("/", "")}`}
+      content={canonicalURL}
     />
 
     <!-- twitter-title -->

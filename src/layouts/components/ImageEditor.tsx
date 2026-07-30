@@ -1,4 +1,4 @@
-﻿import React, { useRef, useState, useEffect, useCallback } from 'react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 import type { PresetSize, ProcessingOptions } from '@/lib/imageProcessor';
 import {
   loadImage,
@@ -29,7 +29,7 @@ const ImageEditor: React.FC<ImageEditorProps> = ({
   const [outputFormat, setOutputFormat] = useState<'png' | 'jpeg' | 'webp'>('png');
 
   // Active preset can be updated at runtime by the page's preset buttons
-  // (via the `socialcrop:preset-change` window event), so switching a preset
+  // (via the `photocroply:preset-change` window event), so switching a preset
   // re-renders the already-uploaded image in the new aspect ratio.
   const [activePreset, setActivePreset] = useState<PresetSize | undefined>(preset);
 
@@ -60,8 +60,8 @@ const ImageEditor: React.FC<ImageEditorProps> = ({
         });
       }
     };
-    window.addEventListener('socialcrop:preset-change', handlePresetChange);
-    return () => window.removeEventListener('socialcrop:preset-change', handlePresetChange);
+    window.addEventListener('photocroply:preset-change', handlePresetChange);
+    return () => window.removeEventListener('photocroply:preset-change', handlePresetChange);
   }, []);
 
   // Initialize crop when image loads
@@ -159,7 +159,7 @@ const ImageEditor: React.FC<ImageEditorProps> = ({
   // Download processed image
   const handleDownload = async () => {
     if (!previewCanvasRef.current) return;
-    await downloadCanvas(previewCanvasRef.current, 'socialcrop', outputFormat, 0.95);
+    await downloadCanvas(previewCanvasRef.current, 'photocroply', outputFormat, 0.95);
   };
 
   // Get quality indicator text and color

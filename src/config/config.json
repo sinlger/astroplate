@@ -1,7 +1,7 @@
 ﻿{
   "site": {
-    "title": "SocialCrop",
-    "base_url": "https://socialcrop.app",
+    "title": "PhotoCroply",
+    "base_url": "https://PhotoCroply.app",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
@@ -9,7 +9,7 @@
     "logo_darkmode": "/images/logo-darkmode.png",
     "logo_width": "150",
     "logo_height": "30",
-    "logo_text": "SocialCrop"
+    "logo_text": "PhotoCroply"
   },
 
   "settings": {
@@ -17,24 +17,24 @@
     "sticky_header": true,
     "theme_switcher": true,
     "default_theme": "system",
-    "pagination": 2,
+    "pagination": 10,
     "summary_length": 200,
     "blog_folder": "blog"
   },
 
   "announcement": {
     "enable": false,
-    "content": "<span class='text-center block'>⭐ Loving SocialCrop? <a class='underline' href='https://github.com' target='_blank' rel='noopener'>Star on Github</a></span>",
+    "content": "<span class='text-center block'>⭐ Loving PhotoCroply? <a class='underline' href='https://github.com' target='_blank' rel='noopener'>Star on Github</a></span>",
     "expire_days": 7
   },
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "SocialCrop © 2025 · All rights reserved"
+    "copyright": "PhotoCroply © 2025 · All rights reserved"
   },
 
   "navigation_button": {
-    "enable": true,
+    "enable": false,
     "label": "Github",
     "link": "https://github.com"
   },
@@ -51,7 +51,7 @@
   },
 
   "metadata": {
-    "meta_author": "SocialCrop",
+    "meta_author": "PhotoCroply",
     "meta_image": "/images/og-image.png",
     "meta_description": "Free online social media image resizer and cropper. 100% free, no quality loss, instant browser processing."
   },

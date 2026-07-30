@@ -38,15 +38,34 @@ const images = import.meta.glob("/public/images/**/*.{jpeg,jpg,png,gif,svg}");
 // Check if the source path is valid
 const isValidPath = images[src] ? true : false;
 
-// Log a warning message in red if the image is not found
-!isValidPath &&
-  console.error(
-    `\x1b[31mImage not found - ${src}.\x1b[0m Make sure the image is in the /public/images folder.`,
-  );
+// Curated, good-looking gradient palettes used as a fallback when an image
+// is missing. Colors are picked deterministically from the alt/src text so
+// the same post always gets the same placeholder.
+const placeholderGradients = [
+  ["#6366f1", "#8b5cf6"],
+  ["#0ea5e9", "#22d3ee"],
+  ["#f43f5e", "#fb7185"],
+  ["#f59e0b", "#f97316"],
+  ["#10b981", "#34d399"],
+  ["#8b5cf6", "#ec4899"],
+  ["#14b8a6", "#0ea5e9"],
+  ["#ef4444", "#f59e0b"],
+  ["#3b82f6", "#6366f1"],
+  ["#ec4899", "#f43f5e"],
+];
+
+// Simple deterministic string hash.
+const seed = alt || src;
+let hash = 0;
+for (let i = 0; i < seed.length; i++) {
+  hash = (hash * 31 + seed.charCodeAt(i)) & 0xffffffff;
+}
+const [fromColor, toColor] =
+  placeholderGradients[Math.abs(hash) % placeholderGradients.length];
 ---
 
 {
-  isValidPath && (
+  isValidPath ? (
     <Image
       src={images[src]() as Promise<{ default: ImageMetadata }>}
       alt={alt}
@@ -59,5 +78,18 @@ const isValidPath = images[src] ? true : false;
       format={format}
       style={style}
     />
+  ) : (
+    <div
+      class={className}
+      role="img"
+      aria-label={alt}
+      style={`aspect-ratio: ${width} / ${height}; background-image: linear-gradient(135deg, ${fromColor}, ${toColor}); ${style ?? ""}`}
+    >
+      <div class="flex h-full w-full items-center justify-center p-8 text-center">
+        <span class="text-balance text-lg font-semibold leading-tight tracking-tight text-white/90 drop-shadow-md lg:text-xl">
+          {alt}
+        </span>
+      </div>
+    </div>
   )
 }

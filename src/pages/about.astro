@@ -37,7 +37,7 @@ if (!buildDrafts && aboutIndex.data.draft) {
               />
             )
           }
-          <h2 set:html={markdownify(title)} class="h3 mb-6" />
+          <h1 set:html={markdownify(title)} class="h3 mb-6" />
           <div class="content">
             <Content />
           </div>

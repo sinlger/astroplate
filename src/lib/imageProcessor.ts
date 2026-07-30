@@ -1,5 +1,5 @@
-﻿/**
- * SocialCrop - Image Processor Utilities
+/**
+ * PhotoCroply - Image Processor Utilities
  * All image processing happens client-side using Canvas API
  */
 

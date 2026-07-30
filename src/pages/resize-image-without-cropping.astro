@@ -1,4 +1,4 @@
-﻿---
+---
 import Base from "@/layouts/Base.astro";
 import Breadcrumbs from "@/layouts/components/Breadcrumbs.astro";
 import ImageEditor from "@/layouts/components/ImageEditor";
@@ -226,7 +226,7 @@ const description = "Fit your full picture into any social media aspect ratio wi
     "@type": "WebApplication",
     "name": "Resize Image Without Cropping",
     "description": "Fit your full picture into any social media aspect ratio without cropping out key details. Add blurred, white, or custom color borders easily. Free online no-crop resizer.",
-    "url": "https://socialcrop.app/resize-image-without-cropping",
+    "url": "https://photocroply.com/resize-image-without-cropping",
     "applicationCategory": "PhotoEditor",
     "operatingSystem": "Any",
     "offers": {
@@ -234,6 +234,27 @@ const description = "Fit your full picture into any social media aspect ratio wi
       "price": "0",
       "priceCurrency": "USD"
     }
+  }
+  </script>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://photocroply.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Resize Image Without Cropping",
+        "item": "https://photocroply.com/resize-image-without-cropping"
+      }
+    ]
   }
   </script>
 
@@ -312,7 +333,7 @@ const description = "Fit your full picture into any social media aspect ratio wi
 
           // Notify the ImageEditor island to adopt the new target size
           if (preset) {
-            window.dispatchEvent(new CustomEvent('socialcrop:preset-change', { detail: preset }));
+            window.dispatchEvent(new CustomEvent('photocroply:preset-change', { detail: preset }));
           }
 
           const editor = document.getElementById('editor');
