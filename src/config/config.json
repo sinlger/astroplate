@@ -1,7 +1,7 @@
 ﻿{
   "site": {
     "title": "PhotoCroply",
-    "base_url": "https://PhotoCroply.app",
+    "base_url": "https://PhotoCroply.com",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
